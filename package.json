@@ -1,0 +1,22 @@
+{
+  "name": "bookmarklets",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhibirc/bookmarklets.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/zhibirc/bookmarklets/issues"
+  },
+  "homepage": "https://github.com/zhibirc/bookmarklets#readme",
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "uglify-js-es6": "^2.8.9"
+  }
+}

@@ -1,0 +1,1 @@
+javascript:!function(){[...document.all].forEach(n=>{"IMG"===n.tagName&&(n.style.display="none !important"),getComputedStyle(n).backgroundImage.indexOf("url")!==-1&&(n.style.backgroundImage="none !important")})}();
