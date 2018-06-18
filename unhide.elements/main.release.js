@@ -1,0 +1,1 @@
+javascript:!function(){var i,t,l=document.all;for(t=0;t<l.length;t+=1)i=l[t],"hidden"===i.style.visibility?i.style.visibility="visible !important":"none"===i.style.display?i.style.display="block !important":"IMG"===i.tagName&&(i.width<2||i.height<2)&&(i.style.cssText="outline: 5px solid #f00"),i.style.opacity=1}();
