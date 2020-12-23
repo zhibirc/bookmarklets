@@ -1,13 +1,18 @@
 #!/bin/bash
+# ------------------------------
+# Build.
+# Compile TS->JS, compress output and wrap it to a form required by bookmarklets.
+# ------------------------------
 
-# minify sources and transform them to bookmarklets
+declare -r RELEASE_FILE_NAME='index.min.js'
 
-for dir in * ; do
-    if [ -d "$dir" ]
-    then
-        echo "$dir [OK]"
-        eval "/usr/bin/uglifyjs $PWD/$dir/main.develop.js --compress --mangle --output $PWD/$dir/main.release.js"
-        sed -i -e 's/^/javascript:/' "$PWD/$dir/main.release.js"
+for directory in *; do
+    if [[ -d "$directory" && "$directory" != 'node_modules' ]]; then
+        tsc "$directory/index.ts"
+        uglifyjs $PWD/$directory/index.js --compress --mangle --output $PWD/$directory/$RELEASE_FILE_NAME
+        sed -i -e 's/^/javascript:/' "$PWD/$directory/$RELEASE_FILE_NAME"
+
+        echo -e "$directory \033[0;32m[OK]\033[0m"
     fi
 done
 

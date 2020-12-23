@@ -1,0 +1,15 @@
+# detect all text files and automatically normalize them (convert CRLF to LF)
+* text=auto
+
+# definitively text files
+*.css  text
+*.js   text
+*.json text
+*.yml  text
+*.html text
+*.md   text
+*.po   text
+*.pot  text
+*.pug  text
+*.scss text
+*.txt  text

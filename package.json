@@ -1,22 +1,30 @@
 {
-  "name": "bookmarklets",
-  "version": "1.0.0",
-  "description": "",
-  "author": "",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zhibirc/bookmarklets.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/zhibirc/bookmarklets/issues"
-  },
-  "homepage": "https://github.com/zhibirc/bookmarklets#readme",
-  "keywords": [],
-  "license": "ISC",
-  "dependencies": {
-    "uglify-js-es6": "^2.8.9"
-  }
+    "name": "bookmarklets",
+    "version": "1.0.0",
+    "description": "",
+    "author": {
+        "name": "Yaroslav Surilov",
+        "email": ""
+    },
+    "license": "MIT",
+    "keywords": [],
+    "funding": [],
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zhibirc/bookmarklets.git"
+    },
+    "scripts": {
+        "build": "build.sh"
+    },
+    "bugs": {
+        "url": "https://github.com/zhibirc/bookmarklets/issues"
+    },
+    "homepage": "https://github.com/zhibirc/bookmarklets#readme",
+    "devDependencies": {
+        "@tsconfig/recommended": "^1.0.1",
+        "tslint": "~6.1.0",
+        "typescript": "~4.0.2",
+        "uglify-js-es6": "^2.8.9"
+    }
 }
