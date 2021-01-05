@@ -17,23 +17,47 @@
 
 
 (() => {
-    // really it's HTTP, hack to avoid "Blocked loading mixed active content"
-    const API_HOST:string = 'https://vexer.ru/jokez/joda.php';
-
-    const stylesContainer:string = `position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, 0.5); z-index: ${Number.MAX_SAFE_INTEGER};`;
-    const stylesIframe:string    = 'width: 600px; height: 600px; border: none; display: block; margin: 100px auto; background: cyan; overflow: hidden;';
+    const stylesOverlay:string   = `position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, .6); z-index: ${2 ** 31 - 1}; transition: .5s`;
+    const stylesWrapper:string   = 'display: flex; width: 600px; height: 600px; border: none; margin: 100px auto; background: cyan; overflow: hidden;';
+    const stylesLangColumns      = 'flex: 1; font-size: 40px; font-weight: bold; text-align: center; line-height: 600px; cursor: pointer;';
+    const stylesIframe:string    = 'width: 100%; height: 100%; border: none; display: block; background: cyan; overflow: hidden;';
     const stylesCloseIcon:string = 'position: absolute; top: 20px; right: 45px; font-size: 60px; cursor: pointer;';
 
-    const $div:HTMLDivElement    = document.createElement('div');
-    const $closeIcon:HTMLElement = document.createElement('b');
+    const $overlay:HTMLDivElement    = document.createElement('div');
+    const $wrapper:HTMLDivElement    = document.createElement('div');
+    const $columnRuUk:HTMLDivElement = document.createElement('div');
+    const $columnEn:HTMLDivElement   = document.createElement('div');
+    const $closeIcon:HTMLElement     = document.createElement('b');
 
-    $div.style.cssText = stylesContainer;
-    $closeIcon.style.cssText = stylesCloseIcon;
+    $overlay.style.cssText    = stylesOverlay;
+    $wrapper.style.cssText    = stylesWrapper;
+    $columnRuUk.style.cssText = stylesLangColumns;
+    $columnEn.style.cssText   = stylesLangColumns;
+    $closeIcon.style.cssText  = stylesCloseIcon;
+
+    $columnRuUk.textContent = 'RU/UK';
+    $columnEn.textContent   = 'EN';
+
     $closeIcon.innerHTML = '&times;';
-    $closeIcon.addEventListener('click', () => document.body.removeChild($div));
 
-    // TODO: add sandbox policies
-    $div.innerHTML = `<iframe src="${API_HOST}" style="${stylesIframe}" scrolling="no"><p>How about IFRAME?</p></iframe>`;
-    $div.appendChild($closeIcon);
-    document.body.appendChild($div);
+    $columnRuUk.addEventListener('click', () => {
+        while ( $wrapper.firstChild ) $wrapper.removeChild($wrapper.firstChild);
+
+        // TODO: add sandbox policies
+        // really it's HTTP, hack to avoid "Blocked loading mixed active content"
+        $wrapper.innerHTML = `<iframe src="https://vexer.ru/jokez/joda.php" style="${stylesIframe}" scrolling="no"><p>How about IFRAME?</p></iframe>`;
+    });
+    $columnEn.addEventListener('click', () => {
+        // 'https://api.funtranslations.com/translate/yoda.json'
+    });
+    $closeIcon.addEventListener('click', () => {
+        document.body.removeChild($overlay);
+        // TODO: cleanup?
+    });
+
+    $wrapper.appendChild($columnRuUk);
+    $wrapper.appendChild($columnEn);
+    $overlay.appendChild($closeIcon);
+    $overlay.appendChild($wrapper);
+    document.body.appendChild($overlay);
 })();

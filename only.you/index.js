@@ -2,16 +2,16 @@
  * Remove annoying and intrusive visual garbage around the video of interest on YouTube.
  */
 'use strict';
-(function () {
-    var TAG_WHITE_LIST = ['SCRIPT', 'STYLE', 'LINK'];
-    var ID_WHITE_LIST = ['primary', 'primary-inner', 'player', 'info', 'meta'].map(document.getElementById.bind(document));
+(() => {
+    const TAG_WHITE_LIST = ['SCRIPT', 'STYLE', 'LINK'];
+    const ID_WHITE_LIST = ['primary', 'primary-inner', 'player', 'info', 'meta'].map(document.getElementById.bind(document));
     // @ts-ignore
-    document.querySelectorAll('body *').forEach(function ($element) {
+    document.querySelectorAll('body *').forEach($element => {
         if (!TAG_WHITE_LIST.includes($element.tagName)) {
             $element.parentNode.removeChild($element);
         }
     });
-    ID_WHITE_LIST.forEach(function ($element) {
+    ID_WHITE_LIST.forEach($element => {
         document.body.appendChild($element);
     });
 })();
