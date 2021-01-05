@@ -15,7 +15,7 @@
         "url": "git+https://github.com/zhibirc/bookmarklets.git"
     },
     "scripts": {
-        "build": "build.sh"
+        "build": "./build.sh"
     },
     "bugs": {
         "url": "https://github.com/zhibirc/bookmarklets/issues"

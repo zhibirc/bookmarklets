@@ -8,7 +8,7 @@ declare -r RELEASE_FILE_NAME='index.min.js'
 
 for directory in *; do
     if [[ -d "$directory" && "$directory" != 'node_modules' ]]; then
-        tsc "$directory/index.ts"
+        tsc --alwaysStrict "$directory/index.ts"
         uglifyjs $PWD/$directory/index.js --compress --mangle --output $PWD/$directory/$RELEASE_FILE_NAME
         sed -i -e 's/^/javascript:/' "$PWD/$directory/$RELEASE_FILE_NAME"
 

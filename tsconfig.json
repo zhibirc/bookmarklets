@@ -5,6 +5,7 @@
         "baseUrl": "./",
         "forceConsistentCasingInFileNames": true,
         "strict": true,
+        "alwaysStrict": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "sourceMap": true,

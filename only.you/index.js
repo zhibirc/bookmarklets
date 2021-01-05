@@ -3,17 +3,15 @@
  */
 'use strict';
 (function () {
-    var $TARGET = document.getElementById('primary');
-
+    var TAG_WHITE_LIST = ['SCRIPT', 'STYLE', 'LINK'];
+    var ID_WHITE_LIST = ['primary', 'primary-inner', 'player', 'info', 'meta'].map(document.getElementById.bind(document));
+    // @ts-ignore
     document.querySelectorAll('body *').forEach(function ($element) {
-        $element.style.display = 'none';
+        if (!TAG_WHITE_LIST.includes($element.tagName)) {
+            $element.parentNode.removeChild($element);
+        }
     });
-
-    $TARGET.style.display = 'initial';
-
-    while ( $TARGET.parentNode ) {
-        $TARGET = $TARGET.parentNode;
-        $TARGET.style.display = 'initial';
-    }
+    ID_WHITE_LIST.forEach(function ($element) {
+        document.body.appendChild($element);
+    });
 })();
-
