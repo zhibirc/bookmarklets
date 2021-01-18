@@ -5,17 +5,56 @@
 'use strict';
 
 (() => {
-    const TAG_WHITE_LIST:Array<string> = ['SCRIPT', 'STYLE', 'LINK'];
-    const ID_WHITE_LIST:Array<HTMLElement | null> = ['primary', 'primary-inner', 'player', 'info', 'meta'].map(document.getElementById.bind(document));
-
-    // @ts-ignore
-    document.querySelectorAll('body *').forEach($element => {
-        if ( !TAG_WHITE_LIST.includes($element.tagName) ) {
-            $element.parentNode.removeChild($element);
+    let idealStructure : object = {
+        "ytd-app": {
+            "#content": {
+                "#page-manager": {
+                    "ytd-watch-flexy": {
+                        "#columns": {
+                            "#primary": {
+                                "#primary-inner": {
+                                    "#comments": null
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-    });
+    };
 
-    ID_WHITE_LIST.forEach($element => {
-        document.body.appendChild($element);
-    });
+    (function walk () {
+        let nodeId : string;
+
+        for ( nodeId in idealStructure ) {
+            // @ts-ignore
+            if ( idealStructure[nodeId] === null ) {
+                // @ts-ignore
+                removeSiblings(nodeId, true);
+                return;
+            }
+
+            // @ts-ignore
+            removeSiblings(nodeId);
+            // @ts-ignore
+            idealStructure = idealStructure[nodeId];
+            // @ts-ignore
+            walk();
+        }
+    })();
+
+
+    function removeSiblings ( nodeId : string, invert : boolean = false ) {
+        // @ts-ignore
+        const $parent : HTMLElement = document.querySelector(nodeId).parentNode;
+        // @ts-ignore
+        const collection = [...$parent.children].filter($element => {
+            return (invert ? $element === document.querySelector(nodeId) : $element !== document.querySelector(nodeId))
+                && $element.tagName !== 'SCRIPT'
+                && $element.tagName !== 'LINK'
+                && $element.tagName !== 'STYLE'
+                && $element.tagName !== 'META';
+        });
+        collection.forEach($element => $parent.removeChild($element));
+    }
 })();
