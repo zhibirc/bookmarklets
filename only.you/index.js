@@ -23,24 +23,17 @@
     (function walk() {
         let nodeId;
         for (nodeId in idealStructure) {
-            // @ts-ignore
             if (idealStructure[nodeId] === null) {
-                // @ts-ignore
-                removeSiblings(nodeId, true);
-                return;
+                return removeSiblings(nodeId, true);
             }
-            // @ts-ignore
             removeSiblings(nodeId);
-            // @ts-ignore
             idealStructure = idealStructure[nodeId];
-            // @ts-ignore
             walk();
         }
     })();
     function removeSiblings(nodeId, invert = false) {
         // @ts-ignore
         const $parent = document.querySelector(nodeId).parentNode;
-        // @ts-ignore
         const collection = [...$parent.children].filter($element => {
             return (invert ? $element === document.querySelector(nodeId) : $element !== document.querySelector(nodeId))
                 && $element.tagName !== 'SCRIPT'

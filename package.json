@@ -20,8 +20,8 @@
     "homepage": "https://github.com/zhibirc/bookmarklets#readme",
     "devDependencies": {
         "@tsconfig/recommended": "^1.0.1",
+        "terser": "^5.5.1",
         "tslint": "~6.1.0",
-        "typescript": "~4.0.2",
-        "uglify-js-es6": "^2.8.9"
+        "typescript": "~4.0.2"
     }
 }

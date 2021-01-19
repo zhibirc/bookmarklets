@@ -5,7 +5,7 @@
 'use strict';
 
 (() => {
-    let idealStructure : object = {
+    let idealStructure : {[index: string]: any} = {
         "ytd-app": {
             "#content": {
                 "#page-manager": {
@@ -27,18 +27,12 @@
         let nodeId : string;
 
         for ( nodeId in idealStructure ) {
-            // @ts-ignore
             if ( idealStructure[nodeId] === null ) {
-                // @ts-ignore
-                removeSiblings(nodeId, true);
-                return;
+                return removeSiblings(nodeId, true);
             }
 
-            // @ts-ignore
             removeSiblings(nodeId);
-            // @ts-ignore
             idealStructure = idealStructure[nodeId];
-            // @ts-ignore
             walk();
         }
     })();
@@ -47,7 +41,6 @@
     function removeSiblings ( nodeId : string, invert : boolean = false ) {
         // @ts-ignore
         const $parent : HTMLElement = document.querySelector(nodeId).parentNode;
-        // @ts-ignore
         const collection = [...$parent.children].filter($element => {
             return (invert ? $element === document.querySelector(nodeId) : $element !== document.querySelector(nodeId))
                 && $element.tagName !== 'SCRIPT'
