@@ -11,6 +11,8 @@
 
 ## [Only.You](./only.you)
 
+![Youtube](assets/images/youtube.jpeg)
+
 Personally I prefer to focus on some I'm currently doing. This is also about viewing videos on [YouTube](https://www.youtube.com/). 
 The problem is that there are many, many visual distractions around it: similar or recommended videos, control elements, comments. 
 At best, they can interfere with working concentration, and at worst, they can waste time. Current bookmarklet is an attempt to deal with this. :dart:
@@ -25,3 +27,7 @@ At best, they can interfere with working concentration, and at worst, they can w
 
 This fun bookmarklet allows you to translate the so-called "normal" speech in **Russian**/**Ukrainian**/**English** to Yoda's language. 
 Just select an original language and enter some.
+
+## Contributing
+
+Pull requests with your own favorite bookmarklets are highly welcome.
