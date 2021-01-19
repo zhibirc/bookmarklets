@@ -45,7 +45,7 @@ if [[ "$build_mode" == '--all' ]]; then
     echo -e "\n${COLOR_CYAN}Convert images${COLOR_RESET}"
 
     for file in "$IMAGE_DIRECTORY"/*.*; do
-        convert "$file" -resize 300 "$file"
+        convert "$file" -resize 300 -monochrome "$file"
         echo -e "$file ${COLOR_GREEN}[processed]${COLOR_RESET}"
     done
 fi
