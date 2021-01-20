@@ -7,6 +7,7 @@
 #  - compile TypeScript sources to vanilla JavaScript;
 #  - compress resulting files with Terser uglification tool;
 #  - add "javascript:" protocol at the beginning of each minified file;
+#  - cleanup from intermediate unminified *.js files;
 #  - if run with "--all" option then resize all images in assets.
 # ------------------------------
 
@@ -30,6 +31,9 @@ for directory in *; do
         terser "$PWD/$directory/index.js" --compress --mangle --output "$PWD/$directory/$RELEASE_FILE"
         sed -i -e 's/^/javascript:/' "$PWD/$directory/$RELEASE_FILE"
 
+        # cleanup
+        rm -f "$PWD/$directory/index.js"
+
         echo -e "$directory ${COLOR_GREEN}[OK]${COLOR_RESET}"
     fi
 done
@@ -45,6 +49,7 @@ if [[ "$build_mode" == '--all' ]]; then
     echo -e "\n${COLOR_CYAN}Convert images${COLOR_RESET}"
 
     for file in "$IMAGE_DIRECTORY"/*.*; do
+        # resize the image to that width while preserving the aspect ratio
         convert "$file" -resize 300 -monochrome "$file"
         echo -e "$file ${COLOR_GREEN}[processed]${COLOR_RESET}"
     done
