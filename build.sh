@@ -12,6 +12,7 @@
 # ------------------------------
 
 declare -r RELEASE_FILE='index.min.js'
+declare -r README_FILE='readme.md'
 declare -r IMAGE_DIRECTORY='./assets/images'
 declare -r build_mode="$1"
 
@@ -28,8 +29,16 @@ echo -e "\n${COLOR_CYAN}Compress files and transform to bookmarklets${COLOR_RESE
 
 for directory in *; do
     if [[ -d "$directory" && "$directory" != 'node_modules' && "$directory" != 'assets' ]]; then
-        terser "$PWD/$directory/index.js" --compress --mangle --output "$PWD/$directory/$RELEASE_FILE"
+        # also force to use single quotes to prevent clashes with surrounding HTML code
+        terser "$PWD/$directory/index.js" --compress --mangle --format "quote_style=1" --output "$PWD/$directory/$RELEASE_FILE"
         sed -i -e 's/^/javascript:/' "$PWD/$directory/$RELEASE_FILE"
+
+        # synchronize file system buffers and wait a bit
+        sync "$PWD/$directory/$RELEASE_FILE"
+        sleep 1
+
+        # for end-users convenience prepare a bookmarklet link in readme
+        sed -i "s/\(data-id=\"$directory\" href=\"\).*\"/\1$(sed -e 's/[\/&]/\\&/g' "$PWD/$directory/$RELEASE_FILE")\"/" "$PWD/$README_FILE"
 
         # cleanup
         rm -f "$PWD/$directory/index.js"

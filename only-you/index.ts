@@ -6,14 +6,14 @@
 
 (() => {
     let idealStructure : {[index: string]: any} = {
-        "ytd-app": {
-            "#content": {
-                "#page-manager": {
-                    "ytd-watch-flexy": {
-                        "#columns": {
-                            "#primary": {
-                                "#primary-inner": {
-                                    "#comments": null
+        'ytd-app': {
+            '#content': {
+                '#page-manager': {
+                    'ytd-watch-flexy': {
+                        '#columns': {
+                            '#primary': {
+                                '#primary-inner': {
+                                    '#comments': null
                                 }
                             }
                         }
