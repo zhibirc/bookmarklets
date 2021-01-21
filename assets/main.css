@@ -3,6 +3,10 @@ body {
     color: rgb(80, 80, 80);
 }
 
+.usage {
+    display: block;
+}
+
 .tip {
     background: #dfd;
     border-left: 5px solid #4caf50;
