@@ -10,12 +10,7 @@
 
 ## [hooktube](./hooktube)
 
-![Hooktube](assets/images/hooktube.png)
-
-
 ## [only-you](./only-you)
-
-![Youtube](assets/images/youtube.jpeg)
 
 Personally I prefer to focus on some I'm currently doing. This is also about viewing videos on [YouTube](https://www.youtube.com/). 
 The problem is that there are many, many visual distractions around it: similar or recommended videos, control elements, comments. 
