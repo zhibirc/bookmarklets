@@ -5,8 +5,11 @@
 #
 # The process consists of:
 #  - compile TypeScript sources to vanilla JavaScript;
-#  - compress resulting files with Terser uglification tool;
+#  - compress resulting files with Terser uglification tool with care about transforming quotes;
 #  - add "javascript:" protocol at the beginning of each minified file;
+#  - replace inner (in HTML attributes, for example) double quotes with escape sequence "%22";
+#  - synchronize file system buffers and wait a bit to ensure writing to disk is completed;
+#  - for end-users convenience prepare a bookmarklet link ("href" content is just constructed) for public page;
 #  - cleanup from intermediate unminified *.js files;
 #  - if run with "--all" option then resize all images in assets.
 # ------------------------------
@@ -28,12 +31,12 @@ tsc
 echo -e "\n${COLOR_CYAN}Compress files and transform to bookmarklets${COLOR_RESET}"
 
 for directory in *; do
-    if [[ -d "$directory" && "$directory" != 'node_modules' && "$directory" != 'assets' ]]; then
+    if [[ -d "$directory" && "$directory" != 'node_modules' && "$directory" != 'assets' && "$directory" != 'public' ]]; then
         # also force to use single quotes to prevent clashes with surrounding HTML code
         terser "$PWD/$directory/index.js" --compress --mangle --format "quote_style=1" --output "$PWD/$directory/$RELEASE_FILE"
         # add "javascript:" schema to the begin
         sed -i -e 's/^/javascript:/' "$PWD/$directory/$RELEASE_FILE"
-        # replace inner (in HTML attributes for example) double quotes with escape sequence ("&quot;" is also suited)
+        # replace inner (in HTML attributes, for example) double quotes with escape sequence ("&quot;" is also suited)
         sed -i -e 's/"/%22/g' "$PWD/$directory/$RELEASE_FILE"
 
         # synchronize file system buffers and wait a bit
