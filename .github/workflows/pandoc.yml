@@ -1,0 +1,26 @@
+name: Pandoc Document Converter
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - run: echo "::set-env name=FILELIST::$(printf '"%s" ' readme.md assets/footer.html)"
+
+      - name: Pandoc Build
+        uses: maxheld83/pandoc-action@v2
+        with:
+          args: --standalone --output=public/index.html ${{ env.FILELIST }} --css assets/main.css
+
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v4.1.0
+        with:
+          message: 'update site content from sources'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
