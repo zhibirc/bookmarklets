@@ -22,6 +22,8 @@ At best, they can interfere with working concentration, and at worst, they can w
 </div>
 
 
+## [quick-search](./quick-search)
+
 ## [remove-images](./remove-images)
 
 ## [unhide-elements](./unhide-elements)
