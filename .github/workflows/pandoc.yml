@@ -11,7 +11,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - run: FILELIST=$(printf '"%s" ' readme.md assets/footer.html)
+      - run: |
+            FILELIST=$(printf '"%s" ' readme.md assets/footer.html)
+            sed -i -e 's/<!--//g' readme.md
+            sed -i -e 's/-->//g' readme.md
 
       - name: Pandoc Build
         uses: maxheld83/pandoc-action@v2
