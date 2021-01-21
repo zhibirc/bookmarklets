@@ -1,10 +1,11 @@
 body {
-    height: 100vh;
-    padding: 0;
-
-    /*background: rgb(173, 223, 173);*/
-    /*background: rgb(208, 240, 192);*/
-
     font-family: Impact, Charcoal, sans-serif;
     color: rgb(80, 80, 80);
+}
+
+.tip {
+    background: #dfd;
+    border-left: 5px solid #4caf50;
+    margin-top: 10px;
+    padding: 10px;
 }
