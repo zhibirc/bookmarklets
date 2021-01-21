@@ -4,6 +4,7 @@
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](license.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg)]()
 [![HitCount](https://hits.dwyl.com/zhibirc/bookmarklets.svg)](https://hits.dwyl.com/zhibirc/bookmarklets)
+![Pandoc Document Converter](https://github.com/zhibirc/bookmarklets/workflows/Pandoc%20Document%20Converter/badge.svg?branch=master)
 
 ---
 
