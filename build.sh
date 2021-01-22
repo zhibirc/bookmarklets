@@ -11,11 +11,13 @@
 #  - synchronize file system buffers and wait a bit to ensure writing to disk is completed;
 #  - for end-users convenience prepare a bookmarklet link ("href" content is just constructed) for public page;
 #  - cleanup from intermediate unminified *.js files;
+#  - prepare Markdown readme to publication;
 #  - if run with "--all" option then resize all images in assets.
 # ------------------------------
 
 declare -r RELEASE_FILE='index.min.js'
 declare -r README_FILE='readme.md'
+declare -r PUBLIC_DIRECTORY='docs/'
 declare -r IMAGE_DIRECTORY='./assets/images'
 declare -r build_mode="$1"
 
@@ -54,6 +56,11 @@ for directory in *; do
         echo -e "$directory ${COLOR_GREEN}[OK]${COLOR_RESET}"
     fi
 done
+
+# prepare Markdown readme to publication
+cp "$PWD/$README_FILE" "$PUBLIC_DIRECTORY"
+sed -i 's/<!--//g' "${PUBLIC_DIRECTORY}${README_FILE}"
+sed -i 's/-->//g' "${PUBLIC_DIRECTORY}${README_FILE}"
 
 if [[ "$build_mode" == '--all' ]]; then
     if ! command -v convert >/dev/null 2>&1; then
