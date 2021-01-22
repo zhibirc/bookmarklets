@@ -45,6 +45,18 @@ Just select an original language and enter some.
 
 
 
+## [zip-url](./zip-url)
+
+Short links for less typing, quick remember, pretty look and traffic economy.
+
+
+<div>
+    <a rel="nofollow" data-id="zip-url" href="javascript:'use strict';(()=>{const t={tinyUrl:()=>`https://tinyurl.com/create.php?url=${encodeURIComponent(location.href)}`};window.open(t.tinyUrl())})();">zip-url</a>
+    <p class="tip"><strong>Tip:</strong> drag this to your bookmarks toolbar or right-click and add to bookmarks.</p>
+</div>
+
+
+
 ## Contributing
 
 Pull requests with your own favorite bookmarklets are highly welcome.
