@@ -48,3 +48,5 @@ Just select an original language and enter some.
 ## Contributing
 
 Pull requests with your own favorite bookmarklets are highly welcome.
+
+<!-- <style>body{font-family:Impact,Charcoal,sans-serif;color:#505050}.tip{background:#dfd;border-left:5px solid #4caf50;margin-top:10px;padding:10px}</style> -->
