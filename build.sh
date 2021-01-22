@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 # ------------------------------
 # Builder.
 # Compile TS->JS, compress output and wrap it to a form required by bookmarklets.
@@ -56,6 +56,8 @@ for directory in *; do
         echo -e "$directory ${COLOR_GREEN}[OK]${COLOR_RESET}"
     fi
 done
+
+echo -e "\n${COLOR_CYAN}Prepare readme's markdown to publication${COLOR_RESET}"
 
 # prepare Markdown readme to publication
 cp "$PWD/$README_FILE" "$PUBLIC_DIRECTORY/"
