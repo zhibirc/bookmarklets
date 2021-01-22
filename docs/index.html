@@ -17,6 +17,29 @@
   <![endif]-->
 </head>
 <body>
-
+<h1 id="bookmarklets">bookmarklets</h1>
+<p><a href=""><img src="https://img.shields.io/maintenance/yes/2021.svg?style=flat-square" alt="Maintenance" /></a> <a href="license.md"><img src="https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square" alt="GitHub" /></a> <a href=""><img src="https://img.shields.io/badge/PRs-welcome-blue.svg" alt="PRs Welcome" /></a> <a href="https://hits.dwyl.com/zhibirc/bookmarklets"><img src="https://hits.dwyl.com/zhibirc/bookmarklets.svg" alt="HitCount" /></a> <img src="https://github.com/zhibirc/bookmarklets/workflows/Pandoc%20Document%20Converter/badge.svg?branch=master" alt="Pandoc Document Converter" /></p>
+<hr />
+<h2 id="hooktube"><a href="./hooktube">hooktube</a></h2>
+<h2 id="only-you"><a href="./only-you">only-you</a></h2>
+<p>Personally I prefer to focus on some I’m currently doing. This is also about viewing videos on <a href="https://www.youtube.com/">YouTube</a>. The problem is that there are many, many visual distractions around it: similar or recommended videos, control elements, comments. At best, they can interfere with working concentration, and at worst, they can waste time. Current bookmarklet is an attempt to deal with this. :dart:</p>
+<div>
+<pre><code>&lt;a rel=&quot;nofollow&quot; data-id=&quot;only-you&quot; href=&quot;javascript:&#39;use strict&#39;;(()=&gt;{let e={&#39;ytd-app&#39;:{&#39;#content&#39;:{&#39;#page-manager&#39;:{&#39;ytd-watch-flexy&#39;:{&#39;#columns&#39;:{&#39;#primary&#39;:{&#39;#primary-inner&#39;:{&#39;#comments&#39;:null}}}}}}}};function t(e,t=!1){const n=document.querySelector(e).parentNode;[...n.children].filter((n=&gt;(t?n===document.querySelector(e):n!==document.querySelector(e))&amp;&amp;&#39;SCRIPT&#39;!==n.tagName&amp;&amp;&#39;LINK&#39;!==n.tagName&amp;&amp;&#39;STYLE&#39;!==n.tagName&amp;&amp;&#39;META&#39;!==n.tagName)).forEach((e=&gt;n.removeChild(e)))}!function n(){let r;for(r in e){if(null===e[r])return t(r,!0);t(r),e=e[r],n()}}()})();&quot;&gt;only-you&lt;/a&gt;
+&lt;p class=&quot;tip&quot;&gt;&lt;strong&gt;Tip:&lt;/strong&gt; drag this to your bookmarks toolbar or right-click and add to bookmarks.&lt;/p&gt;</code></pre>
+</div>
+<h2 id="quick-search"><a href="./quick-search">quick-search</a></h2>
+<h2 id="remove-images"><a href="./remove-images">remove-images</a></h2>
+<h2 id="unhide-elements"><a href="./unhide-elements">unhide-elements</a></h2>
+<h2 id="yodify"><a href="./yodify">yodify</a></h2>
+<figure>
+<img src="assets/images/yoda.png" alt="Yoda himself" /><figcaption>Yoda himself</figcaption>
+</figure>
+<p>This fun bookmarklet allows you to translate the so-called “normal” speech in <strong>Russian</strong>/<strong>Ukrainian</strong>/<strong>English</strong> to Yoda’s language. Just select an original language and enter some.</p>
+<div>
+<pre><code>&lt;a rel=&quot;nofollow&quot; data-id=&quot;yodify&quot; href=&quot;javascript:&#39;use strict&#39;;(()=&gt;{const e=`position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, .6); z-index: ${Math.pow(2,31)-1}; transition: .5s`,t=&#39;flex: 1; font-size: 40px; font-weight: bold; text-align: center; line-height: 600px; cursor: pointer;&#39;,n=document.createElement(&#39;div&#39;),i=document.createElement(&#39;div&#39;),d=document.createElement(&#39;div&#39;),o=document.createElement(&#39;div&#39;),r=document.createElement(&#39;b&#39;);n.style.cssText=e,i.style.cssText=&#39;display: flex; width: 600px; height: 600px; border: none; margin: 100px auto; background: cyan; overflow: hidden;&#39;,d.style.cssText=t,o.style.cssText=t,r.style.cssText=&#39;position: absolute; top: 20px; right: 45px; font-size: 60px; cursor: pointer;&#39;,d.textContent=&#39;RU/UK&#39;,o.textContent=&#39;EN&#39;,r.innerHTML=&#39;&amp;times;&#39;,d.addEventListener(&#39;click&#39;,(()=&gt;{for(;i.firstChild;)i.removeChild(i.firstChild);i.innerHTML=&#39;&lt;iframe src=%22https://vexer.ru/jokez/joda.php%22 style=%22width: 100%; height: 100%; border: none; display: block; background: cyan; overflow: hidden;%22 scrolling=%22no%22&gt;&lt;p&gt;How about IFRAME?&lt;/p&gt;&lt;/iframe&gt;&#39;})),o.addEventListener(&#39;click&#39;,(()=&gt;{})),r.addEventListener(&#39;click&#39;,(()=&gt;{document.body.removeChild(n)})),i.appendChild(d),i.appendChild(o),n.appendChild(r),n.appendChild(i),document.body.appendChild(n)})();&quot;&gt;yodify&lt;/a&gt;
+&lt;p class=&quot;tip&quot;&gt;&lt;strong&gt;Tip:&lt;/strong&gt; drag this to your bookmarks toolbar or right-click and add to bookmarks.&lt;/p&gt;</code></pre>
+</div>
+<h2 id="contributing">Contributing</h2>
+<p>Pull requests with your own favorite bookmarklets are highly welcome.</p>
 </body>
 </html>
