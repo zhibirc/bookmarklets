@@ -17,12 +17,10 @@ The problem is that there are many, many visual distractions around it: similar 
 At best, they can interfere with working concentration, and at worst, they can waste time. Current bookmarklet is an attempt to deal with this. :dart:
 
 <!--
-```html
 <div>
     <a rel="nofollow" data-id="only-you" href="javascript:'use strict';(()=>{let e={'ytd-app':{'#content':{'#page-manager':{'ytd-watch-flexy':{'#columns':{'#primary':{'#primary-inner':{'#comments':null}}}}}}}};function t(e,t=!1){const n=document.querySelector(e).parentNode;[...n.children].filter((n=>(t?n===document.querySelector(e):n!==document.querySelector(e))&&'SCRIPT'!==n.tagName&&'LINK'!==n.tagName&&'STYLE'!==n.tagName&&'META'!==n.tagName)).forEach((e=>n.removeChild(e)))}!function n(){let r;for(r in e){if(null===e[r])return t(r,!0);t(r),e=e[r],n()}}()})();">only-you</a>
     <p class="tip"><strong>Tip:</strong> drag this to your bookmarks toolbar or right-click and add to bookmarks.</p>
 </div>
-```
 -->
 
 
@@ -40,12 +38,10 @@ This fun bookmarklet allows you to translate the so-called "normal" speech in **
 Just select an original language and enter some.
 
 <!--
-```html
 <div>
     <a rel="nofollow" data-id="yodify" href="javascript:'use strict';(()=>{const e=`position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, .6); z-index: ${Math.pow(2,31)-1}; transition: .5s`,t='flex: 1; font-size: 40px; font-weight: bold; text-align: center; line-height: 600px; cursor: pointer;',n=document.createElement('div'),i=document.createElement('div'),d=document.createElement('div'),o=document.createElement('div'),r=document.createElement('b');n.style.cssText=e,i.style.cssText='display: flex; width: 600px; height: 600px; border: none; margin: 100px auto; background: cyan; overflow: hidden;',d.style.cssText=t,o.style.cssText=t,r.style.cssText='position: absolute; top: 20px; right: 45px; font-size: 60px; cursor: pointer;',d.textContent='RU/UK',o.textContent='EN',r.innerHTML='&times;',d.addEventListener('click',(()=>{for(;i.firstChild;)i.removeChild(i.firstChild);i.innerHTML='<iframe src=%22https://vexer.ru/jokez/joda.php%22 style=%22width: 100%; height: 100%; border: none; display: block; background: cyan; overflow: hidden;%22 scrolling=%22no%22><p>How about IFRAME?</p></iframe>'})),o.addEventListener('click',(()=>{})),r.addEventListener('click',(()=>{document.body.removeChild(n)})),i.appendChild(d),i.appendChild(o),n.appendChild(r),n.appendChild(i),document.body.appendChild(n)})();">yodify</a>
     <p class="tip"><strong>Tip:</strong> drag this to your bookmarks toolbar or right-click and add to bookmarks.</p>
 </div>
-```
 -->
 
 
