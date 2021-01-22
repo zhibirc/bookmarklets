@@ -11,12 +11,17 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - run: README=$(sed -e 's/<!--//g' readme.md | sed -e 's/-->//g' | tee)
+      - run: |
+            sed -e 's/<!--//g' readme.md > tmp.md
+            sed -i -e 's/-->//g' tmp.md
+            TMP='tmp.md'
 
       - name: Pandoc Build
         uses: maxheld83/pandoc-action@v2
         with:
-          args: --standalone --output=public/index.html ${{ env.README }} --css assets/main.css --metadata pagetitle="Bookmarklets"
+          args: --standalone --output=public/index.html ${{ env.TMP }} --css assets/main.css --metadata pagetitle="Bookmarklets"
+      
+      - run: rm -f ${{ env.TMP }}
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v4.1.0
