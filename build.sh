@@ -17,7 +17,7 @@
 
 declare -r RELEASE_FILE='index.min.js'
 declare -r README_FILE='readme.md'
-declare -r PUBLIC_DIRECTORY='docs/'
+declare -r PUBLIC_DIRECTORY='docs'
 declare -r IMAGE_DIRECTORY='./assets/images'
 declare -r build_mode="$1"
 
@@ -58,9 +58,9 @@ for directory in *; do
 done
 
 # prepare Markdown readme to publication
-cp "$PWD/$README_FILE" "$PUBLIC_DIRECTORY"
-sed -i 's/<!--//g' "${PUBLIC_DIRECTORY}${README_FILE}"
-sed -i 's/-->//g' "${PUBLIC_DIRECTORY}${README_FILE}"
+cp "$PWD/$README_FILE" "$PUBLIC_DIRECTORY/"
+sed -i 's/<!--//g' "$PUBLIC_DIRECTORY/$README_FILE"
+sed -i 's/-->//g' "$PUBLIC_DIRECTORY/$README_FILE"
 
 if [[ "$build_mode" == '--all' ]]; then
     if ! command -v convert >/dev/null 2>&1; then
