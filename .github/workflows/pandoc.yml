@@ -18,7 +18,7 @@ jobs:
       - name: Pandoc Build
         uses: maxheld83/pandoc-action@v2
         with:
-          args: --standalone --output=public/index.html --css assets/main.css --metadata pagetitle="Bookmarklets" tmp.md
+          args: tmp.md --standalone --css=assets/main.css --metadata pagetitle="Bookmarklets" --output=public/index.html
       
       - run: rm -f tmp.md
 
