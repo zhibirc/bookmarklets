@@ -33,7 +33,7 @@ tsc
 echo -e "\n${COLOR_CYAN}Compress files and transform to bookmarklets${COLOR_RESET}"
 
 for directory in *; do
-    if [[ -d "$directory" && "$directory" != 'node_modules' && "$directory" != 'assets' && "$directory" != 'public' ]]; then
+    if [[ -d "$directory" && "$directory" != 'node_modules' && "$directory" != 'assets' && "$directory" != "$PUBLIC_DIRECTORY" ]]; then
         # also force to use single quotes to prevent clashes with surrounding HTML code
         terser "$PWD/$directory/index.js" --compress --mangle --format "quote_style=1" --output "$PWD/$directory/$RELEASE_FILE"
         # add "javascript:" schema to the begin
