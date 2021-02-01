@@ -2,7 +2,6 @@
  * Remove annoying and intrusive visual garbage around the video of interest on YouTube.
  */
 
-'use strict';
 
 (() => {
     let idealStructure : {[index: string]: any} = {

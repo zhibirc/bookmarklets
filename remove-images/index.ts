@@ -2,6 +2,7 @@
  * Remove all images on a web page for reducing obtrusiveness.
  */
 
+
 (() : void => {
     [...document.all].forEach(element => {
         if ( element.tagName === 'IMG' ) {

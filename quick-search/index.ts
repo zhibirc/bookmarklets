@@ -2,7 +2,6 @@
  * Search selected text on a web page with provided search engine.
  */
 
-'use strict';
 
 (() : void => {
     const SEARCH_ENGINE : string = 'https://www.google.com/search?q=';

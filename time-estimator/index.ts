@@ -2,6 +2,7 @@
  * Time estimation helper.
  */
 
+
 (() => {
     const $overlay:HTMLDivElement = document.createElement('div');
     const $wrapper:HTMLDivElement = document.createElement('div');

@@ -2,7 +2,6 @@
  * Short links for less typing, quick remember, pretty look and traffic economy.
  */
 
-'use strict';
 
 (() : void => {
     const zippers : {[index: string]: Function} = {
