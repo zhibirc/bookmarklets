@@ -28,6 +28,8 @@ At best, they can interfere with working concentration, and at worst, they can w
 
 ## [remove-images](./remove-images)
 
+## [restore-contextmenu](./restore-contextmenu)
+
 ## [unhide-elements](./unhide-elements)
 
 ## [yodify](./yodify)
