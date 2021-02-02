@@ -30,6 +30,10 @@ At best, they can interfere with working concentration, and at worst, they can w
 
 ## [restore-contextmenu](https://github.com/zhibirc/bookmarklets/blob/master/restore-contextmenu/index.ts)
 
+## [show-passwords](https://github.com/zhibirc/bookmarklets/blob/master/show-passwords/index.ts)
+
+## [time-estimator](https://github.com/zhibirc/bookmarklets/blob/master/time-estimator/index.ts)
+
 ## [unhide-elements](https://github.com/zhibirc/bookmarklets/blob/master/unhide-elements/index.ts)
 
 ## [yodify](https://github.com/zhibirc/bookmarklets/blob/master/yodify/index.ts)
