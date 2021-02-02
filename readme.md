@@ -8,9 +8,9 @@
 
 ---
 
-## [hooktube](./hooktube)
+## [hooktube](https://github.com/zhibirc/bookmarklets/blob/master/hooktube/index.ts)
 
-## [only-you](./only-you)
+## [only-you](https://github.com/zhibirc/bookmarklets/blob/master/only-you/index.ts)
 
 Personally I prefer to focus on some I'm currently doing. This is also about viewing videos on [YouTube](https://www.youtube.com/). 
 The problem is that there are many, many visual distractions around it: similar or recommended videos, control elements, comments. 
@@ -24,17 +24,17 @@ At best, they can interfere with working concentration, and at worst, they can w
 -->
 
 
-## [quick-search](./quick-search)
+## [quick-search](https://github.com/zhibirc/bookmarklets/blob/master/quick-search/index.ts)
 
-## [remove-images](./remove-images)
+## [remove-images](https://github.com/zhibirc/bookmarklets/blob/master/remove-images/index.ts)
 
-## [restore-contextmenu](./restore-contextmenu)
+## [restore-contextmenu](https://github.com/zhibirc/bookmarklets/blob/master/restore-contextmenu/index.ts)
 
-## [unhide-elements](./unhide-elements)
+## [unhide-elements](https://github.com/zhibirc/bookmarklets/blob/master/unhide-elements/index.ts)
 
-## [yodify](./yodify)
+## [yodify](https://github.com/zhibirc/bookmarklets/blob/master/yodify/index.ts)
 
-![Yoda himself](assets/images/yoda.png)
+![Yoda himself](https://github.com/zhibirc/bookmarklets/blob/master/assets/images/yoda.png)
 
 This fun bookmarklet allows you to translate the so-called "normal" speech in **Russian**/**Ukrainian**/**English** to Yoda's language. 
 Just select an original language and enter some.
@@ -47,7 +47,7 @@ Just select an original language and enter some.
 -->
 
 
-## [zip-url](./zip-url)
+## [zip-url](https://github.com/zhibirc/bookmarklets/blob/master/zip-url/index.ts)
 
 Short links for less typing, quick remember, pretty look and traffic economy.
 
