@@ -1,5 +1,6 @@
 /**
  * Time estimation helper.
+ * @author Yaroslav Surilov <zhibirc.echo@gmail.com>
  */
 
 

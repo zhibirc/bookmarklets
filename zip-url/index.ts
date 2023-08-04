@@ -1,5 +1,6 @@
 /**
  * Short links for less typing, quick remember, pretty look and traffic economy.
+ * @author Yaroslav Surilov <zhibirc.echo@gmail.com>
  */
 
 

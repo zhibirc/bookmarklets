@@ -1,5 +1,5 @@
 /**
- *
+ * @author Yaroslav Surilov <zhibirc.echo@gmail.com>
  */
 
 

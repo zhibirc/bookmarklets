@@ -2,7 +2,10 @@
     "name": "bookmarklets",
     "version": "1.0.0",
     "description": "",
-    "author": "Yaroslav Surilov <zhibirc.echo@gmail.com> (http://test.directory/)",
+    "author": {
+        "name" : "Yaroslav Surilov",
+        "email" : "zhibirc.echo@gmail.com"
+    },
     "license": "MIT",
     "keywords": [],
     "funding": [],

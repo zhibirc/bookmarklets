@@ -1,10 +1,11 @@
 /**
- * Search selected text on a web page with provided search engine.
+ * Search selected text on a web page in Wikipedia.
+ * @author Yaroslav Surilov <zhibirc.echo@gmail.com>
  */
 
 
 (() : void => {
-    const SEARCH_ENGINE : string = 'https://www.google.com/search?q=';
+    const SEARCH_ENGINE : string = 'https://en.wikipedia.org/wiki/';
 
     let selected : Selection | null;
     let query : string;

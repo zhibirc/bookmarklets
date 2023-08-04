@@ -37,9 +37,9 @@ for directory in *; do
         # also force to use single quotes to prevent clashes with surrounding HTML code
         terser "$PWD/$directory/index.js" --compress --mangle --format "quote_style=1" --output "$PWD/$directory/$RELEASE_FILE"
         # add "javascript:" schema to the begin
-        sed -i -e 's/^/javascript:/' "$PWD/$directory/$RELEASE_FILE"
+        gsed -i -e 's/^/javascript:/' "$PWD/$directory/$RELEASE_FILE"
         # replace inner (in HTML attributes, for example) double quotes with escape sequence ("&quot;" is also suited)
-        sed -i -e 's/"/%22/g' "$PWD/$directory/$RELEASE_FILE"
+        gsed -i -e 's/"/%22/g' "$PWD/$directory/$RELEASE_FILE"
 
         # synchronize file system buffers and wait a bit
         sync "$PWD/$directory/$RELEASE_FILE"
@@ -48,7 +48,7 @@ for directory in *; do
         echo -e "\n${COLOR_CYAN}Add bookmarklet's code to README${COLOR_RESET}"
 
         # for end-users convenience prepare a bookmarklet link in readme
-        sed -i "s/\(data-id=\"$directory\" href=\"\).*\"/\1$(sed -e 's/[\/&]/\\&/g' "$PWD/$directory/$RELEASE_FILE")\"/" "$PWD/$README_FILE"
+        gsed -i "s/\(data-id=\"$directory\" href=\"\).*\"/\1$(sed -e 's/[\/&]/\\&/g' "$PWD/$directory/$RELEASE_FILE")\"/" "$PWD/$README_FILE"
 
         # cleanup
         rm -f "$PWD/$directory/index.js"
@@ -61,8 +61,8 @@ echo -e "\n${COLOR_CYAN}Prepare readme's markdown to publication${COLOR_RESET}"
 
 # prepare Markdown readme to publication
 cp "$PWD/$README_FILE" "$PUBLIC_DIRECTORY/"
-sed -i 's/<!--//g' "$PUBLIC_DIRECTORY/$README_FILE"
-sed -i 's/-->//g' "$PUBLIC_DIRECTORY/$README_FILE"
+gsed -i 's/<!--//g' "$PUBLIC_DIRECTORY/$README_FILE"
+gsed -i 's/-->//g' "$PUBLIC_DIRECTORY/$README_FILE"
 
 if [[ "$build_mode" == '--all' ]]; then
     if ! command -v convert >/dev/null 2>&1; then

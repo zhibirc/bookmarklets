@@ -1,5 +1,6 @@
 /**
  * Remove all images on a web page for reducing obtrusiveness.
+ * @author Yaroslav Surilov <zhibirc.echo@gmail.com>
  */
 
 

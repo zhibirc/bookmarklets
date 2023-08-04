@@ -13,6 +13,7 @@
  * Originally found at http://starwars.about.com/movies/starwars/
  *
  * @see https://en.wikipedia.org/wiki/Yoda
+ * @author Yaroslav Surilov <zhibirc.echo@gmail.com>
  */
 
 

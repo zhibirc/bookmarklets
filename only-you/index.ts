@@ -1,5 +1,6 @@
 /**
  * Remove annoying and intrusive visual garbage around the video of interest on YouTube.
+ * @author Yaroslav Surilov <zhibirc.echo@gmail.com>
  */
 
 
