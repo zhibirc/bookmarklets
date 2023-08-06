@@ -6,13 +6,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Pandoc Build
-        uses: maxheld83/pandoc-action@v2
+      - name: Pandoc build
+        uses: docker://pandoc/core:2.9
         with:
           args: readme.md --standalone --css=assets/main.css --metadata pagetitle="Bookmarklets" --output=docs/index.html
       
