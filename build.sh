@@ -61,8 +61,8 @@ echo -e "\n${COLOR_CYAN}Prepare readme's markdown to publication${COLOR_RESET}"
 
 # prepare Markdown readme to publication
 cp "$PWD/$README_FILE" "$PUBLIC_DIRECTORY/"
-gsed -i 's/<!--//g' "$PUBLIC_DIRECTORY/$README_FILE"
-gsed -i 's/-->//g' "$PUBLIC_DIRECTORY/$README_FILE"
+#gsed -i 's/<!--//g' "$PUBLIC_DIRECTORY/$README_FILE"
+#gsed -i 's/-->//g' "$PUBLIC_DIRECTORY/$README_FILE"
 
 if [[ "$build_mode" == '--all' ]]; then
     if ! command -v convert >/dev/null 2>&1; then
