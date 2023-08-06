@@ -14,7 +14,12 @@ jobs:
       - name: Pandoc build
         uses: docker://pandoc/core:2.9
         with:
-          args: readme.md --standalone --css=assets/main.css --metadata pagetitle="Bookmarklets" --output=docs/index.html
+          args: >-
+            readme.md
+            --standalone
+            --css=main.css
+            --metadata pagetitle="Bookmarklets"
+            --output=docs/index.html
       
       - run: |
             cp assets/main.css docs/main.css
