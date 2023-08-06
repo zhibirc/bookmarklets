@@ -17,6 +17,7 @@ jobs:
           args: readme.md --standalone --css=assets/main.css --metadata pagetitle="Bookmarklets" --output=docs/index.html
       
       - run: |
+            cp assets/main.css docs/main.css
             sed -i -e 's/<!--//g' docs/index.html
             sed -i -e 's/-->//g' docs/index.html
 
