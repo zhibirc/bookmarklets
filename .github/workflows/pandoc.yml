@@ -17,8 +17,8 @@ jobs:
           args: >-
             --from=markdown
             --to=html
-            --self-contained
-            --css=../assets/main.css
+            --standalone
+            --include-in-header=../assets/main.css
             --metadata pagetitle="Bookmarklets"
             --output=docs/index.html
             readme.md
