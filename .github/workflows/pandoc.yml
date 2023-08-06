@@ -15,20 +15,21 @@ jobs:
         uses: docker://pandoc/core:2.9
         with:
           args: >-
-            readme.md
+            --from=markdown
+            --to=html
             --standalone
-            --css=main.css
+            --css=../assets/main.css
             --metadata pagetitle="Bookmarklets"
             --output=docs/index.html
+            readme.md
       
       - run: |
-            cp assets/main.css docs/main.css
             sed -i -e 's/<!--//g' docs/index.html
             sed -i -e 's/-->//g' docs/index.html
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v4.1.0
         with:
-          message: 'update site content from sources'
+          message: 'Generate HTML documentation'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
