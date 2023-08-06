@@ -17,8 +17,7 @@ jobs:
           args: >-
             --from=markdown
             --to=html
-            --embed-resources
-            --standalone
+            --self-contained
             --css=../assets/main.css
             --metadata pagetitle="Bookmarklets"
             --output=docs/index.html
