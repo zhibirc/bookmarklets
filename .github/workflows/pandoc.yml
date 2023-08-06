@@ -22,10 +22,14 @@ jobs:
             --to=html
             --standalone
             --embed-resources
-            --css=../assets/main.css
+            --css=assets/main.css
             --metadata pagetitle="Bookmarklets"
             --output=docs/index.html
             docs/readme.md
+      
+      - run: |
+            sed -i -e 's/<!--//g' docs/index.html
+            sed -i -e 's/-->//g' docs/index.html
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v4.1.0

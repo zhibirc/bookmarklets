@@ -65,8 +65,8 @@ echo -e "\n${COLOR_CYAN}Prepare readme's markdown to publication${COLOR_RESET}"
 # prepare Markdown readme to publication
 mkdir tmp
 cp "$README_FILE" "tmp/"
-sed -i 's/<!--//g' "tmp/$README_FILE"
-sed -i 's/-->//g' "tmp/$README_FILE"
+#sed -i 's/<!--//g' "tmp/$README_FILE"
+#sed -i 's/-->//g' "tmp/$README_FILE"
 cp "tmp/$README_FILE" "$PUBLIC_DIR/"
 rm -rf tmp
 
