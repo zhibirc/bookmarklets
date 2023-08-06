@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Pandoc build
-        uses: docker://pandoc/core:2.9
+        uses: docker://pandoc/latex:3.1.1
         with:
           args: >-
             --from=markdown
