@@ -16,7 +16,9 @@
 # ------------------------------
 
 declare -r RELEASE_FILE='index.min.js'
-declare -r README_FILE='readme.md'
+declare -r TEMPLATE_FILE='template.md'
+declare -r TMP_DIR='tmp'
+declare -r TMP_FILE='tmp.md'
 declare -r SRC_DIR='src'
 declare -r PUBLIC_DIR='docs'
 declare -r IMAGE_DIR='./assets/images'
@@ -33,6 +35,9 @@ tsc
 
 echo -e "\n${COLOR_CYAN}Compress files and transform to bookmarklets${COLOR_RESET}"
 
+mkdir "$TMP_DIR"
+cp "$PUBLIC_DIR/$TEMPLATE_FILE" "$TMP_DIR/$TMP_FILE"
+
 for dir in $SRC_DIR/*; do
     if [[ -d "$dir" ]]; then
         # also force to use single quotes to prevent clashes with surrounding HTML code
@@ -48,10 +53,10 @@ for dir in $SRC_DIR/*; do
 
         sleep 1
 
-        echo -e "\n${COLOR_CYAN}Add bookmarklet's code to README${COLOR_RESET}"
+        echo -e "\n${COLOR_CYAN}Add bookmarklet's code to temporary markdown file${COLOR_RESET}"
 
         # for end-users convenience prepare a bookmarklet link in readme
-        sed -i "s/\(data-id=\"$(basename $dir)\" href=\"\).*\"/\1$(sed -e 's/[\/&]/\\&/g' "$dir/$RELEASE_FILE")\"/" "$README_FILE"
+        sed -i "s/\(data-id=\"$(basename $dir)\" href=\"\).*\"/\1$(sed -e 's/[\/&]/\\&/g' "$dir/$RELEASE_FILE")\"/" "$TMP_DIR/$TMP_FILE"
 
         # cleanup
         rm -f "$dir"/*.js
@@ -59,16 +64,6 @@ for dir in $SRC_DIR/*; do
         echo -e "$dir ${COLOR_GREEN}[OK]${COLOR_RESET}"
     fi
 done
-
-echo -e "\n${COLOR_CYAN}Prepare readme's markdown to publication${COLOR_RESET}"
-
-# prepare Markdown readme to publication
-mkdir tmp
-cp "$README_FILE" "tmp/"
-#sed -i 's/<!--//g' "tmp/$README_FILE"
-#sed -i 's/-->//g' "tmp/$README_FILE"
-cp "tmp/$README_FILE" "$PUBLIC_DIR/"
-rm -rf tmp
 
 if [[ "$build_mode" == '--all' ]]; then
     if ! command -v convert >/dev/null 2>&1; then
