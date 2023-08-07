@@ -25,8 +25,7 @@ CMD npm run build:src \
             --metadata pagetitle="Bookmarklets" \
             --output=tmp/index.html \
             tmp/tmp.md \
-    #&& sed -i -e 's/<!--//g' tmp/index.html \
-    #&& sed -i -e 's/-->//g' tmp/index.html \
-    #&& sed -i -e 's/[if lt IE 9]>/<!--[if lt IE 9]>/g' tmp/index.html \
+    && sed -i -e 's/<!--//g' tmp/index.html \
+    && sed -i -e 's/-->//g' tmp/index.html \
     && mv tmp/index.html /app/docs \
     && rm -rf tmp
