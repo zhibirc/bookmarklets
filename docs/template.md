@@ -1,12 +1,6 @@
+<!-- <div class="top-container"> -->
+
 # bookmarklets
-
-[![Maintenance](https://img.shields.io/maintenance/yes/2023.svg?style=flat-square)]()
-[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](license.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg?style=flat-square)]()
-[![HitCount](https://hits.dwyl.com/zhibirc/bookmarklets.svg)](https://hits.dwyl.com/zhibirc/bookmarklets)
-![Pandoc Document Converter](https://github.com/zhibirc/bookmarklets/workflows/Pandoc%20Document%20Converter/badge.svg?branch=master&style=flat-square)
-
----
 
 ## [hooktube](https://github.com/zhibirc/bookmarklets/blob/master/hooktube/index.ts)
 
@@ -115,3 +109,5 @@ Short links for less typing, quick remember, pretty look and traffic economy.
 ## Contributing
 
 Pull requests with your own favorite bookmarklets are highly welcome.
+
+<!-- </div> -->
