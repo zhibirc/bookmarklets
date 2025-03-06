@@ -5,11 +5,11 @@
 
 // @ts-nocheck
 
-(() : void => {
-    const elements : HTMLAllCollection = document.all;
+(() => {
+    const elements = document.all;
 
-    let element : Element;
-    let index : number;
+    let element;
+    let index;
 
     for ( index = 0; index < elements.length; index += 1 ) {
         element = elements[index];

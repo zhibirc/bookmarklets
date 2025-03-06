@@ -1,6 +1,6 @@
 # bookmarklets
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2023.svg?style=flat-square)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2025.svg?style=flat-square)]()
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](license.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue.svg?style=flat-square)]()
 [![HitCount](https://hits.dwyl.com/zhibirc/bookmarklets.svg)](https://hits.dwyl.com/zhibirc/bookmarklets)
@@ -8,7 +8,7 @@
 
 ---
 
-## [hooktube](https://github.com/zhibirc/bookmarklets/blob/master/hooktube/index.ts)
+## [hooktube](https://github.com/zhibirc/bookmarklets/blob/master/hooktube/index.js)
 
 <!--
 <div>
@@ -17,7 +17,7 @@
 </div>
 -->
 
-## [only-you](https://github.com/zhibirc/bookmarklets/blob/master/only-you/index.ts)
+## [only-you](https://github.com/zhibirc/bookmarklets/blob/master/only-you/index.js)
 
 Personally I prefer to focus on some I'm currently doing. This is also about viewing videos on [YouTube](https://www.youtube.com/). 
 The problem is that there are many, many visual distractions around it: similar or recommended videos, control elements, comments. 
@@ -31,7 +31,7 @@ At best, they can interfere with working concentration, and at worst, they can w
 -->
 
 
-## [quick-search](https://github.com/zhibirc/bookmarklets/blob/master/quick-search/index.ts)
+## [quick-search](https://github.com/zhibirc/bookmarklets/blob/master/quick-search/index.js)
 
 <!--
 <div>
@@ -40,7 +40,7 @@ At best, they can interfere with working concentration, and at worst, they can w
 </div>
 -->
 
-## [remove-images](https://github.com/zhibirc/bookmarklets/blob/master/remove-images/index.ts)
+## [remove-images](https://github.com/zhibirc/bookmarklets/blob/master/remove-images/index.js)
 
 <!--
 <div>
@@ -49,7 +49,7 @@ At best, they can interfere with working concentration, and at worst, they can w
 </div>
 -->
 
-## [restore-contextmenu](https://github.com/zhibirc/bookmarklets/blob/master/restore-contextmenu/index.ts)
+## [restore-contextmenu](https://github.com/zhibirc/bookmarklets/blob/master/restore-contextmenu/index.js)
 
 <!--
 <div>
@@ -58,7 +58,7 @@ At best, they can interfere with working concentration, and at worst, they can w
 </div>
 -->
 
-## [show-passwords](https://github.com/zhibirc/bookmarklets/blob/master/show-passwords/index.ts)
+## [show-passwords](https://github.com/zhibirc/bookmarklets/blob/master/show-passwords/index.js)
 
 <!--
 <div>
@@ -67,7 +67,7 @@ At best, they can interfere with working concentration, and at worst, they can w
 </div>
 -->
 
-## [time-estimator](https://github.com/zhibirc/bookmarklets/blob/master/time-estimator/index.ts)
+## [time-estimator](https://github.com/zhibirc/bookmarklets/blob/master/time-estimator/index.js)
 
 <!--
 <div>
@@ -76,7 +76,7 @@ At best, they can interfere with working concentration, and at worst, they can w
 </div>
 -->
 
-## [unhide-elements](https://github.com/zhibirc/bookmarklets/blob/master/unhide-elements/index.ts)
+## [unhide-elements](https://github.com/zhibirc/bookmarklets/blob/master/unhide-elements/index.js)
 
 <!--
 <div>
@@ -85,7 +85,7 @@ At best, they can interfere with working concentration, and at worst, they can w
 </div>
 -->
 
-## [yodify](https://github.com/zhibirc/bookmarklets/blob/master/yodify/index.ts)
+## [yodify](https://github.com/zhibirc/bookmarklets/blob/master/yodify/index.js)
 
 ![Yoda himself](https://github.com/zhibirc/bookmarklets/blob/master/assets/images/yoda.png)
 
@@ -100,7 +100,7 @@ Just select an original language and enter some.
 -->
 
 
-## [zip-url](https://github.com/zhibirc/bookmarklets/blob/master/zip-url/index.ts)
+## [zip-url](https://github.com/zhibirc/bookmarklets/blob/master/zip-url/index.js)
 
 Short links for less typing, quick remember, pretty look and traffic economy.
 

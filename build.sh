@@ -1,11 +1,10 @@
 #!/bin/bash -e
 # ------------------------------
 # Builder.
-# Compile TS->JS, compress output and wrap it to a form required by bookmarklets.
+# Compress output and wrap it to a form required by bookmarklets.
 #
 # The process consists of:
-#  - compile TypeScript sources to vanilla JavaScript;
-#  - compress resulting files with Terser uglification tool with care about transforming quotes;
+#  - compress source files with Terser uglification tool with care about transforming quotes;
 #  - add "javascript:" protocol at the beginning of each minified file;
 #  - replace inner (in HTML attributes, for example) double quotes with escape sequence "%22";
 #  - synchronize file system buffers and wait a bit to ensure writing to disk is completed;
@@ -28,10 +27,6 @@ declare -r COLOR_RED='\033[0;31m'
 declare -r COLOR_GREEN='\033[0;32m'
 declare -r COLOR_CYAN='\033[0;36m'
 declare -r COLOR_RESET='\033[0m'
-
-echo -e "${COLOR_CYAN}Compile TypeScript to JavaScript${COLOR_RESET}"
-
-tsc
 
 echo -e "\n${COLOR_CYAN}Compress files and transform to bookmarklets${COLOR_RESET}"
 

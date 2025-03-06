@@ -4,11 +4,11 @@
  */
 
 
-(() : void => {
-    const SEARCH_ENGINE : string = 'https://en.wikipedia.org/wiki/';
+(() => {
+    const SEARCH_ENGINE = 'https://en.wikipedia.org/wiki/';
 
-    let selected : Selection | null;
-    let query : string;
+    let selected;
+    let query;
 
     if ( window.getSelection ) {
         selected = window.getSelection();

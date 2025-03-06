@@ -4,7 +4,7 @@
  */
 
 
-(() : void => {
+(() => {
     [...document.all].forEach(element => {
         if ( element.tagName === 'IMG' ) {
             // @ts-ignore

@@ -18,17 +18,17 @@
 
 
 (() => {
-    const stylesOverlay:string   = `position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, .6); z-index: ${2 ** 31 - 1}; transition: .5s`;
-    const stylesWrapper:string   = 'display: flex; width: 600px; height: 600px; border: none; margin: 100px auto; background: cyan; overflow: hidden;';
-    const stylesLangColumns      = 'flex: 1; font-size: 40px; font-weight: bold; text-align: center; line-height: 600px; cursor: pointer;';
-    const stylesIframe:string    = 'width: 100%; height: 100%; border: none; display: block; background: cyan; overflow: hidden;';
-    const stylesCloseIcon:string = 'position: absolute; top: 20px; right: 45px; font-size: 60px; cursor: pointer;';
+    const stylesOverlay = `position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, .6); z-index: ${2 ** 31 - 1}; transition: .5s`;
+    const stylesWrapper = 'display: flex; width: 600px; height: 600px; border: none; margin: 100px auto; background: cyan; overflow: hidden;';
+    const stylesLangColumns = 'flex: 1; font-size: 40px; font-weight: bold; text-align: center; line-height: 600px; cursor: pointer;';
+    const stylesIframe = 'width: 100%; height: 100%; border: none; display: block; background: cyan; overflow: hidden;';
+    const stylesCloseIcon = 'position: absolute; top: 20px; right: 45px; font-size: 60px; cursor: pointer;';
 
-    const $overlay:HTMLDivElement    = document.createElement('div');
-    const $wrapper:HTMLDivElement    = document.createElement('div');
-    const $columnRuUk:HTMLDivElement = document.createElement('div');
-    const $columnEn:HTMLDivElement   = document.createElement('div');
-    const $closeIcon:HTMLElement     = document.createElement('b');
+    const $overlay = document.createElement('div');
+    const $wrapper = document.createElement('div');
+    const $columnRuUk = document.createElement('div');
+    const $columnEn = document.createElement('div');
+    const $closeIcon = document.createElement('b');
 
     $overlay.style.cssText    = stylesOverlay;
     $wrapper.style.cssText    = stylesWrapper;

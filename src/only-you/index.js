@@ -5,7 +5,7 @@
 
 
 (() => {
-    let idealStructure : {[index: string]: any} = {
+    let idealStructure = {
         'ytd-app': {
             '#content': {
                 '#page-manager': {
@@ -24,7 +24,7 @@
     };
 
     (function walk () {
-        let nodeId : string;
+        let nodeId;
 
         for ( nodeId in idealStructure ) {
             if ( idealStructure[nodeId] === null ) {
@@ -38,9 +38,8 @@
     })();
 
 
-    function removeSiblings ( nodeId : string, invert : boolean = false ) {
-        // @ts-ignore
-        const $parent : HTMLElement = document.querySelector(nodeId).parentNode;
+    function removeSiblings ( nodeId, invert = false ) {
+        const $parent = document.querySelector(nodeId).parentNode;
         const collection = [...$parent.children].filter($element => {
             return (invert ? $element === document.querySelector(nodeId) : $element !== document.querySelector(nodeId))
                 && $element.tagName !== 'SCRIPT'

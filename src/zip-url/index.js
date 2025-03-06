@@ -4,9 +4,9 @@
  */
 
 
-(() : void => {
-    const zippers : {[index: string]: Function} = {
-        tinyUrl: () : string => {
+(() => {
+    const zippers = {
+        tinyUrl: () => {
             return `https://tinyurl.com/create.php?url=${encodeURIComponent(location.href)}`;
         }
     };
